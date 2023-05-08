@@ -13,6 +13,7 @@ const app = createApp(App)
 
 app.use(StoryblokVue, {
     accessToken: 'JUUl9DQQSGtr6BDkbCMRUAtt',
+    previewToken: 'JUUl9DQQSGtr6BDkbCMRUAtt',
     use: [apiPlugin],
   });
 
