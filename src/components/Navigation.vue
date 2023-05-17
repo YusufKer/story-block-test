@@ -1,14 +1,14 @@
 <template>
-    <div v-editable="blok" class="navigation-outer">
-        <div class="navigation container">
+    <div v-editable="blok" class="bg-[lightcoral]">
+        <div class="container flex justify-between items-center">
             <a :href="blok.logo_link.url">
-                <img class="logo" :src="blok.logo" alt="not found">
+                <img class="w-10 h-10 object-contain onject-center" :src="blok.logo" alt="not found">
             </a>
-            <ul class="desktop-links">
-                <li class="link-group" v-for="(group, index) in blok.link_groups">
-                    <label @click="toggleMenu(index)">{{ group.title }}</label>
-                    <ul :class="openMenuID === index ? 'show' : 'hide'" class="sub-links">
-                        <li v-for="link in group.link"><a :href="link.url.url" :title="link.title">{{ link.title }}</a></li>
+            <ul class="flex items-center gap-4">
+                <li class="link-group relative" v-for="(group, index) in blok.link_groups">
+                    <label @click="toggleMenu(index)" class="cursor-pointer" :title="group.title">{{ group.title }}</label>
+                    <ul :class="openMenuID === index ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'" class="sub-links absolute list-none p-4">
+                        <li v-for="link in group.link" class="w-max"><a :href="link.url.url" :title="link.title">{{ link.title }}</a></li>
                     </ul>
                 </li>
             </ul>
@@ -43,42 +43,9 @@
 </script>
 
 <style scoped>
-    .navigation-outer{
-        background: lightcoral;
-    }
-    .navigation{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 16px;
-    }
-    .logo{
-        width: 3rem;
-        height: 3rem;
-        object-fit: contain;
-        object-position: center;
-    }
-    .desktop-links{
-        display:flex;
-        align-items: center;
-        gap:1rem;
-        list-style-type: none;
-    }
-    .link-group{
-        position:relative;
-    }
     .link-group .sub-links{
-        opacity: 0;
-        pointer-events: none;
-        position: absolute;
         top: calc(100% + 1rem);
         left: 0;
-        list-style-type: none;
         background-color: lightblue;
-        padding:1rem;
-    }
-    .link-group .sub-links.show{
-        opacity: 1;
-        pointer-events: all;
     }
 </style>

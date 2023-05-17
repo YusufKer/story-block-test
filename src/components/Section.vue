@@ -3,7 +3,8 @@
         <div :class="blok.stretch === 'contain' && 'container'">
             <h2>{{ blok.heading }}</h2>
             <p>{{ blok.description }}</p>
-            <component :is="blok.type" :cards="blok.card"/>
+            <!-- look into lightening this load -->
+            <component :is="blok.type" :blok="blok"/>
         </div>
     </div>
 </template>

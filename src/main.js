@@ -1,5 +1,8 @@
 import { createApp } from 'vue';
 import { StoryblokVue, apiPlugin } from '@storyblok/vue';
+
+import './style.css'
+
 import App from './App.vue';
 import Page from './components/Page.vue';
 import Navigation from './components/Navigation.vue';
@@ -7,6 +10,7 @@ import Banner from './components/Banner.vue';
 import Section from './components/Section.vue';
 import Carousel from './components/Carousel.vue';
 import Gallery from './components/Gallery.vue';
+import Form from './components/Form.vue';
 
 
 const app = createApp(App)
@@ -23,5 +27,6 @@ app.component('Banner', Banner);
 app.component('Section', Section);
 app.component('Carousel', Carousel);
 app.component('Gallery', Gallery);
+app.component('Form', Form);
 
 app.mount('#app')
