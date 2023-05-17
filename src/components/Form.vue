@@ -15,6 +15,11 @@
 
 <script setup>
     defineProps({blok:Object})
+
+    function submit(){
+        alert('TEST FUNCTION')
+        console.log(blok.endpoint)
+    }
 </script>
 
 <style scoped>

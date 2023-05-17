@@ -1,6 +1,7 @@
 <template>
     <div :class="`grid-cols-${blok.columns}`" class="grid gap-4">
         <!-- Card might be better id extracted into it's own component -->
+        {{ blok.columns }}
         <div class="card" v-for="card in blok.card">
             <p class="text-red-500">{{ card.title }}</p>
             <p>{{ card.description }}</p>
