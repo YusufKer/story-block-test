@@ -1,11 +1,12 @@
 <script setup>
 import Home from './pages/Home.vue';
+import AboutUs from './pages/AboutUs.vue';
 </script>
 
 <template>
   <Suspense>
     <template #default>
-      <Home />
+      <router-view></router-view>
     </template>
 
     <template #fallback>

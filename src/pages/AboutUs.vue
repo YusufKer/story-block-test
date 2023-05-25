@@ -1,12 +1,10 @@
 <script setup>
 import { useStoryblok } from '@storyblok/vue';
-const story = await useStoryblok('home', { version: 'draft' });
+const story = await useStoryblok('about-us', { version: 'draft' });
 </script>
 
 <template>
-    <div>
-        <StoryblokComponent v-if="story" :blok="story.content" />
-    </div>
+  <StoryblokComponent v-if="story" :blok="story.content" />
 </template>
 
 <style>
