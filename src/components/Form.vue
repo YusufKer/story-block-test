@@ -7,13 +7,13 @@
                 <label
                     v-if="inputGroup.label"
                     :title="inputGroup.description"
-                    :for="'input_' + index"
+                    :for="blok.name + 'input_' + index"
                 >
                 {{ inputGroup.label }}:
                 </label>
                 <input
                     :name="inputGroup.label"
-                    :id="'input_' + index"
+                    :id="blok.name + 'input_' + index"
                     :type="inputGroup.input_type"
                     :placeholder="inputGroup.placeholder ? inputGroup.placeholder : ''"
                 />
@@ -32,16 +32,15 @@
     const formEndpoint = props.blok.endpoint.url;
     const formMethod = props.blok.method;
 
-    console.table({
-        formEndpoint,
-        formMethod
-    })
+    // console.table({
+    //     formEndpoint,
+    //     formMethod
+    // })
 
     async function submit(){
         const inputs = form.value.querySelectorAll('input');
         const object = {};
         inputs.forEach(input => object[input.name.toLowerCase()] = input.value);
-        console.log(object)
         await fetchdata(formEndpoint,formMethod,object);
     }
 

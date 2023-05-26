@@ -25,6 +25,8 @@ const router = createRouter({
 })
 
 import Page from './components/Page.vue';
+import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
 import Navigation from './components/Navigation.vue';
 import Banner from './components/Banner.vue';
 import Section from './components/Section.vue';
@@ -43,6 +45,8 @@ app.use(StoryblokVue, {
   });
 
 app.component('Page', Page);
+app.component('Header', Header);
+app.component('Footer', Footer);
 app.component('Navigation', Navigation);
 app.component('Banner', Banner);
 app.component('Section', Section);
